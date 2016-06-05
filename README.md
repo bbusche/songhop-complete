@@ -1,4 +1,4 @@
-Chicago-specific Untappd data, using their API in an Angular app 
+The completed Songhop code with no modifications 
 =======
 
 Based on the Ionic Framework tutorial: Mastering the Ionic Framework: 
