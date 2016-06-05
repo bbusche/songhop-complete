@@ -9,6 +9,8 @@ Controller for the discover page
     Recommendations.getNextSongs()
       .then(function(){
         $scope.currentSong = Recommendations.queue[0];
+        // Music playing stuff
+        Recommendations.playCurrentSong();
       });
 
     // initialize the current song
@@ -33,6 +35,19 @@ Controller for the discover page
             // $scope.currentSong = angular.copy($scope.songs[randomSong]);
             $scope.currentSong = Recommendations.queue[0];
         }, 250);
+
+        // Music playing stuff
+        Recommendations.playCurrentSong();
+    }
+
+    // used for retrieving the next album image.
+    // if there isn't an album image available next, return empty string.
+    $scope.nextAlbumImg = function() {
+      if (Recommendations.queue.length > 1) {
+        return Recommendations.queue[1].image_large;
+      }
+
+      return '';
     }
 })
 
